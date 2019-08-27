@@ -335,23 +335,25 @@
 <p>  思路：为函数找到最合适的参数，使得函数的值和样本的值最接近。</p>
 <p>  特点：1. 输出自然地落在0到1之间，并且有概率意义； 2. 本质上是一个线性的分类器，所以处理不好特征之间相关的情况。</p>
 <p>  适用情景：1. LR同样是很多分类算法的基础组件； 2. 拟合出来的参数代表了每一个特征对结果的影响，是理解数据的好工具</p>
-<h2 id="11-多专家模型-Mixture-of-Experts"><a href="#11-多专家模型-Mixture-of-Experts" class="headerlink" title="11. 多专家模型(Mixture of Experts)"></a>11. 多专家模型(Mixture of Experts)</h2><p>  适用情景：主要用来合并神经网络的分类结果</p>
-<h2 id="10-装袋算法-Bagging"><a href="#10-装袋算法-Bagging" class="headerlink" title="10. 装袋算法(Bagging)"></a>10. 装袋算法(Bagging)</h2><p>  思路：首先随机地抽取训练集，以之为基础训练多个弱分类器，然后通过取平均，或投票(voting)的方式决定最终的分类结果</p>
-<p>  特点：因为随机选取训练集的特点，可以一定程度上避免过度拟合</p>
-<p>  适用情景：未知，但这个模型的效果和参数的选择关系比较大，用默认参数往往没有很好的效果，虽然调对参数结果会比决策树和LR好，但是模型也复杂了，因此没有特殊原因就不要用它了</p>
-<h2 id="9-提升算法-Boosting"><a href="#9-提升算法-Boosting" class="headerlink" title="9. 提升算法(Boosting)"></a>9. 提升算法(Boosting)</h2><p>  例子：AdaBoost，它的每一个弱分类器就是一个决策树</p>
-<p>  思路：从一个最基础的分类器开始，每次寻找一个最能解决当前错误样本的分类器，用加权取和(weighted sum)的方式将这个新的分类器结合进已有的分类器中</p>
-<p>  特点：自带特征选择(feature selection)，只使用在训练集中发现有效的特征，降低了分类时需要计算的特征数量，也在一定程度上解决了高维数据难以理解的问题</p>
-<p>  适用情景：对新手友好，刚得到数据时可以尝试使用</p>
-<h2 id="8-神经网络-Neural-Network"><a href="#8-神经网络-Neural-Network" class="headerlink" title="8. 神经网络(Neural Network)"></a>8. 神经网络(Neural Network)</h2><p>  思路：利用训练样本逐渐完善参数</p>
-<p>  特点：1. 相较于LR，引入大量中间层，能更好地捕捉输入特征之间的关系； 2. 准确率依赖于庞大的训练集。</p>
-<p>  适用情景：1. 数据量庞大，参数之间存在内在联系的时候； 2. 用于生成数据，用来做降维</p>
 <h2 id="7-判别分析-Discriminant-Analysis"><a href="#7-判别分析-Discriminant-Analysis" class="headerlink" title="7. 判别分析(Discriminant Analysis)"></a>7. 判别分析(Discriminant Analysis)</h2><p>  例子：典型例子是线性判别分析，简称LDA</p>
 <p>  思路：把高维的样本投射(project)到低维上，投射的标准是让同类的样本尽量靠近，而不同类的尽量分开。对于未来要预测的样本，用同样的方式投射之后就可以轻易地分辨类别了</p>
 <p>如果要分成两类，就投射到一维<br>若要分三类，就投射到二维平面</p>
 <p>  特点：它的正确性有数学公式可以证明，同样是很经得住推敲的算法</p>
 <p>  适用情景：高维数据需要降维的时候，方便观察样本分布。但是它的分类准确率往往不是很高，因此作为降维工具。同时，它的假定样本呈正态分布，因此不适用同心圆等性状分布的数据</p>
+<h2 id="8-神经网络-Neural-Network"><a href="#8-神经网络-Neural-Network" class="headerlink" title="8. 神经网络(Neural Network)"></a>8. 神经网络(Neural Network)</h2><p>  思路：利用训练样本逐渐完善参数</p>
+<p>  特点：1. 相较于LR，引入大量中间层，能更好地捕捉输入特征之间的关系； 2. 准确率依赖于庞大的训练集。</p>
+<p>  适用情景：1. 数据量庞大，参数之间存在内在联系的时候； 2. 用于生成数据，用来做降维</p>
+<hr>
 <h2 id="集成学习算法-Ensemble-Learning"><a href="#集成学习算法-Ensemble-Learning" class="headerlink" title="集成学习算法(Ensemble Learning)"></a>集成学习算法(Ensemble Learning)</h2><p>  核心理念：将多个较弱的分类器结合起来，得到的结果会比一个强的分类器更好</p>
+<h2 id="9-提升算法-Boosting"><a href="#9-提升算法-Boosting" class="headerlink" title="9. 提升算法(Boosting)"></a>9. 提升算法(Boosting)</h2><p>  例子：AdaBoost，它的每一个弱分类器就是一个决策树</p>
+<p>  思路：从一个最基础的分类器开始，每次寻找一个最能解决当前错误样本的分类器，用加权取和(weighted sum)的方式将这个新的分类器结合进已有的分类器中</p>
+<p>  特点：自带特征选择(feature selection)，只使用在训练集中发现有效的特征，降低了分类时需要计算的特征数量，也在一定程度上解决了高维数据难以理解的问题</p>
+<p>  适用情景：对新手友好，刚得到数据时可以尝试使用</p>
+<h2 id="10-装袋算法-Bagging"><a href="#10-装袋算法-Bagging" class="headerlink" title="10. 装袋算法(Bagging)"></a>10. 装袋算法(Bagging)</h2><p>  思路：首先随机地抽取训练集，以之为基础训练多个弱分类器，然后通过取平均，或投票(voting)的方式决定最终的分类结果</p>
+<p>  特点：因为随机选取训练集的特点，可以一定程度上避免过度拟合</p>
+<p>  适用情景：未知，但这个模型的效果和参数的选择关系比较大，用默认参数往往没有很好的效果，虽然调对参数结果会比决策树和LR好，但是模型也复杂了，因此没有特殊原因就不要用它了</p>
+<h2 id="11-多专家模型-Mixture-of-Experts"><a href="#11-多专家模型-Mixture-of-Experts" class="headerlink" title="11. 多专家模型(Mixture of Experts)"></a>11. 多专家模型(Mixture of Experts)</h2><p>  适用情景：主要用来合并神经网络的分类结果</p>
+<hr>
 <h2 id="预测模型"><a href="#预测模型" class="headerlink" title="预测模型"></a>预测模型</h2><p>  最大熵模型(Maximum Entropy Model)</p>
 <ul>
 <li>用于判断模型预测结果好坏，针对样本，给每个类一个出现概率</li>
