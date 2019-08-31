@@ -312,47 +312,47 @@
         
           
             <h1 id="分类器"><a href="#分类器" class="headerlink" title="分类器"></a>分类器</h1><p>没有最好的分类器，只有最合适的分类器</p>
-<h2 id="1-近邻-Nearest-Neighbor"><a href="#1-近邻-Nearest-Neighbor" class="headerlink" title="1. 近邻(Nearest Neighbor)"></a>1. 近邻(Nearest Neighbor)</h2><p>  例子：最典型的例子是KNN</p>
+<h2 id="近邻-Nearest-Neighbor"><a href="#近邻-Nearest-Neighbor" class="headerlink" title="近邻(Nearest Neighbor)"></a>近邻(Nearest Neighbor)</h2><p>  例子：最典型的例子是KNN</p>
 <p>  思路：对于待判断的点，找到离它最近的几个数据点，根据它们的类型决定待判断点的类型</p>
 <p>  特点：完全跟着数据走，没有数学模型可言</p>
 <p>  适用情景：需要可解释性高的模型的时候</p>
-<h2 id="2-贝叶斯-Bayesian"><a href="#2-贝叶斯-Bayesian" class="headerlink" title="2. 贝叶斯(Bayesian)"></a>2. 贝叶斯(Bayesian)</h2><p>  例子：典型例子是Naive Bayes</p>
+<h2 id="贝叶斯-Bayesian"><a href="#贝叶斯-Bayesian" class="headerlink" title="贝叶斯(Bayesian)"></a>贝叶斯(Bayesian)</h2><p>  例子：典型例子是Naive Bayes</p>
 <p>  思路：根据条件概率计算待判断点的类型</p>
 <p>  特点：相对容易理解，可处理高维数据，虽然结果可能不尽人意</p>
 <p>  使用情景：需要可解释性高，且不同维度之间相关性较小的模型的时候</p>
-<h2 id="3-决策树-Decision-Tree"><a href="#3-决策树-Decision-Tree" class="headerlink" title="3. 决策树(Decision Tree)"></a>3. 决策树(Decision Tree)</h2><p>  思路：沿着特征做切分，随着层层递进，划分越来越细</p>
+<h2 id="决策树-Decision-Tree"><a href="#决策树-Decision-Tree" class="headerlink" title="决策树(Decision Tree)"></a>决策树(Decision Tree)</h2><p>  思路：沿着特征做切分，随着层层递进，划分越来越细</p>
 <p>  特点：通过观察树的上层结构，能够对分类器的核心思路有一个直观的感受。但同时，它也是相对容易被攻击的分类器</p>
 <p>  适用情景：1. 数据分析师希望更好地理解手上的数据的时候； 2. 作为一些更有用的算法的基石</p>
-<h2 id="4-随机森林-Random-Forest"><a href="#4-随机森林-Random-Forest" class="headerlink" title="4. 随机森林(Random Forest)"></a>4. 随机森林(Random Forest)</h2><p>因为不需要很多参数调整就可以达到不错的效果，基本上不知道用什么方法的时候都可以先试一下随机森林</p>
+<h2 id="随机森林-Random-Forest"><a href="#随机森林-Random-Forest" class="headerlink" title="随机森林(Random Forest)"></a>随机森林(Random Forest)</h2><p>因为不需要很多参数调整就可以达到不错的效果，基本上不知道用什么方法的时候都可以先试一下随机森林</p>
 <p>  思路：首先随机选取不同的特征和训练样本，生成大量的决策树，然后综合这些决策树的结果来进行最终的分类</p>
 <p>  特点：相对于决策树，在准确性上有了很大的提升，同时一定程度上改善了决策树容易被攻击的特点</p>
 <p>  适用情景：数据维度相对低（几十维），同时对准确性有较高要求时</p>
-<h2 id="5-SVM支持向量机-Support-vector-machine"><a href="#5-SVM支持向量机-Support-vector-machine" class="headerlink" title="5. SVM支持向量机(Support vector machine)"></a>5. SVM支持向量机(Support vector machine)</h2><p>和随机森林一样，也是一个拿到数据就可以先尝试一下的算法</p>
+<h2 id="SVM支持向量机-Support-vector-machine"><a href="#SVM支持向量机-Support-vector-machine" class="headerlink" title="SVM支持向量机(Support vector machine)"></a>SVM支持向量机(Support vector machine)</h2><p>和随机森林一样，也是一个拿到数据就可以先尝试一下的算法</p>
 <p>  思路：找到不同类别之间的分界面，使得两类样本尽量落在面的两边，而且离分界面尽量远；利用核函数(kernel function)可以将平面映射(mapping)为曲面，进而提高SVM的适用范围</p>
 <p>  特点：相对来说，SVM尽量保持与样本间距离的性质导致它抗攻击能力更强</p>
 <p>  适用情景：在很多数据集上都有优秀的表现</p>
-<h2 id="6-LR逻辑回归-Logistic-Regression"><a href="#6-LR逻辑回归-Logistic-Regression" class="headerlink" title="6. LR逻辑回归(Logistic Regression)"></a>6. LR逻辑回归(Logistic Regression)</h2><p>  例子：线性回归(Linear regression)就是对于函数 f(x) = ax + b， 找到最合适的a, b</p>
+<h2 id="LR逻辑回归-Logistic-Regression"><a href="#LR逻辑回归-Logistic-Regression" class="headerlink" title="LR逻辑回归(Logistic Regression)"></a>LR逻辑回归(Logistic Regression)</h2><p>  例子：线性回归(Linear regression)就是对于函数 f(x) = ax + b， 找到最合适的a, b</p>
 <p>  思路：为函数找到最合适的参数，使得函数的值和样本的值最接近。</p>
 <p>  特点：1. 输出自然地落在0到1之间，并且有概率意义； 2. 本质上是一个线性的分类器，所以处理不好特征之间相关的情况。</p>
 <p>  适用情景：1. LR同样是很多分类算法的基础组件； 2. 拟合出来的参数代表了每一个特征对结果的影响，是理解数据的好工具</p>
-<h2 id="7-判别分析-Discriminant-Analysis"><a href="#7-判别分析-Discriminant-Analysis" class="headerlink" title="7. 判别分析(Discriminant Analysis)"></a>7. 判别分析(Discriminant Analysis)</h2><p>  例子：典型例子是线性判别分析，简称LDA</p>
+<h2 id="判别分析-Discriminant-Analysis"><a href="#判别分析-Discriminant-Analysis" class="headerlink" title="判别分析(Discriminant Analysis)"></a>判别分析(Discriminant Analysis)</h2><p>  例子：典型例子是线性判别分析，简称LDA</p>
 <p>  思路：把高维的样本投射(project)到低维上，投射的标准是让同类的样本尽量靠近，而不同类的尽量分开。对于未来要预测的样本，用同样的方式投射之后就可以轻易地分辨类别了</p>
 <p>如果要分成两类，就投射到一维<br>若要分三类，就投射到二维平面</p>
 <p>  特点：它的正确性有数学公式可以证明，同样是很经得住推敲的算法</p>
 <p>  适用情景：高维数据需要降维的时候，方便观察样本分布。但是它的分类准确率往往不是很高，因此作为降维工具。同时，它的假定样本呈正态分布，因此不适用同心圆等性状分布的数据</p>
-<h2 id="8-神经网络-Neural-Network"><a href="#8-神经网络-Neural-Network" class="headerlink" title="8. 神经网络(Neural Network)"></a>8. 神经网络(Neural Network)</h2><p>  思路：利用训练样本逐渐完善参数</p>
+<h2 id="神经网络-Neural-Network"><a href="#神经网络-Neural-Network" class="headerlink" title="神经网络(Neural Network)"></a>神经网络(Neural Network)</h2><p>  思路：利用训练样本逐渐完善参数</p>
 <p>  特点：1. 相较于LR，引入大量中间层，能更好地捕捉输入特征之间的关系； 2. 准确率依赖于庞大的训练集。</p>
 <p>  适用情景：1. 数据量庞大，参数之间存在内在联系的时候； 2. 用于生成数据，用来做降维</p>
 <hr>
-<h2 id="集成学习算法-Ensemble-Learning"><a href="#集成学习算法-Ensemble-Learning" class="headerlink" title="集成学习算法(Ensemble Learning)"></a>集成学习算法(Ensemble Learning)</h2><p>  核心理念：将多个较弱的分类器结合起来，得到的结果会比一个强的分类器更好</p>
-<h2 id="9-提升算法-Boosting"><a href="#9-提升算法-Boosting" class="headerlink" title="9. 提升算法(Boosting)"></a>9. 提升算法(Boosting)</h2><p>  例子：AdaBoost，它的每一个弱分类器就是一个决策树</p>
+<h1 id="集成学习算法-Ensemble-Learning"><a href="#集成学习算法-Ensemble-Learning" class="headerlink" title="集成学习算法(Ensemble Learning)"></a>集成学习算法(Ensemble Learning)</h1><p>  核心理念：将多个较弱的分类器结合起来，得到的结果会比一个强的分类器更好</p>
+<h2 id="提升算法-Boosting"><a href="#提升算法-Boosting" class="headerlink" title="提升算法(Boosting)"></a>提升算法(Boosting)</h2><p>  例子：AdaBoost，它的每一个弱分类器就是一个决策树</p>
 <p>  思路：从一个最基础的分类器开始，每次寻找一个最能解决当前错误样本的分类器，用加权取和(weighted sum)的方式将这个新的分类器结合进已有的分类器中</p>
 <p>  特点：自带特征选择(feature selection)，只使用在训练集中发现有效的特征，降低了分类时需要计算的特征数量，也在一定程度上解决了高维数据难以理解的问题</p>
 <p>  适用情景：对新手友好，刚得到数据时可以尝试使用</p>
-<h2 id="10-装袋算法-Bagging"><a href="#10-装袋算法-Bagging" class="headerlink" title="10. 装袋算法(Bagging)"></a>10. 装袋算法(Bagging)</h2><p>  思路：首先随机地抽取训练集，以之为基础训练多个弱分类器，然后通过取平均，或投票(voting)的方式决定最终的分类结果</p>
+<h2 id="装袋算法-Bagging"><a href="#装袋算法-Bagging" class="headerlink" title="装袋算法(Bagging)"></a>装袋算法(Bagging)</h2><p>  思路：首先随机地抽取训练集，以之为基础训练多个弱分类器，然后通过取平均，或投票(voting)的方式决定最终的分类结果</p>
 <p>  特点：因为随机选取训练集的特点，可以一定程度上避免过度拟合</p>
 <p>  适用情景：未知，但这个模型的效果和参数的选择关系比较大，用默认参数往往没有很好的效果，虽然调对参数结果会比决策树和LR好，但是模型也复杂了，因此没有特殊原因就不要用它了</p>
-<h2 id="11-多专家模型-Mixture-of-Experts"><a href="#11-多专家模型-Mixture-of-Experts" class="headerlink" title="11. 多专家模型(Mixture of Experts)"></a>11. 多专家模型(Mixture of Experts)</h2><p>  适用情景：主要用来合并神经网络的分类结果</p>
+<h2 id="多专家模型-Mixture-of-Experts"><a href="#多专家模型-Mixture-of-Experts" class="headerlink" title="多专家模型(Mixture of Experts)"></a>多专家模型(Mixture of Experts)</h2><p>  适用情景：主要用来合并神经网络的分类结果</p>
 <hr>
 <h2 id="预测模型"><a href="#预测模型" class="headerlink" title="预测模型"></a>预测模型</h2><p>  最大熵模型(Maximum Entropy Model)</p>
 <ul>
