@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="基础分类器没有最好的分类器，只有最合适的分类器 近邻(Nearest Neighbor)  例子：最典型的例子是KNN   思路：对于待判断的点，找到离它最近的几个数据点，根据它们的类型决定待判断点的类型   特点：完全跟着数据走，没有数学模型可言   适用情景：需要可解释性高的模型的时候 贝叶斯(Bayesian)  例子：典型例子是Naive Bayes   思路：根据条件概率计算待判断点的类">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-31T19:15:21.365Z">
+<meta property="og:updated_time" content="2019-08-31T19:17:19.547Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分类器的简单小结">
 <meta name="twitter:description" content="基础分类器没有最好的分类器，只有最合适的分类器 近邻(Nearest Neighbor)  例子：最典型的例子是KNN   思路：对于待判断的点，找到离它最近的几个数据点，根据它们的类型决定待判断点的类型   特点：完全跟着数据走，没有数学模型可言   适用情景：需要可解释性高的模型的时候 贝叶斯(Bayesian)  例子：典型例子是Naive Bayes   思路：根据条件概率计算待判断点的类">
@@ -352,8 +352,11 @@
 <p>  特点：因为随机选取训练集的特点，可以一定程度上避免过度拟合</p>
 <p>  适用情景：未知，但这个模型的效果和参数的选择关系比较大，用默认参数往往没有很好的效果，虽然调对参数结果会比决策树和LR好，但是模型也复杂了，因此没有特殊原因就不要用它了</p>
 <h3 id="多专家模型-Mixture-of-Experts"><a href="#多专家模型-Mixture-of-Experts" class="headerlink" title="多专家模型(Mixture of Experts)"></a>多专家模型(Mixture of Experts)</h3><p>  适用情景：主要用来合并神经网络的分类结果</p>
-<h2 id="预测模型"><a href="#预测模型" class="headerlink" title="预测模型"></a>预测模型</h2><h3 id="最大熵模型-Maximum-Entropy-Model"><a href="#最大熵模型-Maximum-Entropy-Model" class="headerlink" title="最大熵模型(Maximum Entropy Model)"></a>最大熵模型(Maximum Entropy Model)</h3><p>  用于判断模型预测结果好坏，针对样本，给每个类一个出现概率<br>  LR就是使用最大熵模型作为优化目标的一个算法</p>
-<h3 id="隐马尔可夫-Hidden-Markov-Model"><a href="#隐马尔可夫-Hidden-Markov-Model" class="headerlink" title="隐马尔可夫(Hidden Markov Model)"></a>隐马尔可夫(Hidden Markov Model)</h3><p>  基于序列的预测方法，通过上一个状态预测下一个状态<br>  之所以叫“隐”马尔科夫是因为它的状态本身是不可见的，我们只能根据状态生成的结果序列来学习可能的状态<br>  适用场景：1. 用于序列的预测； 2. 用于生成序列</p>
+<h2 id="预测模型"><a href="#预测模型" class="headerlink" title="预测模型"></a>预测模型</h2><h3 id="最大熵模型-Maximum-Entropy-Model"><a href="#最大熵模型-Maximum-Entropy-Model" class="headerlink" title="最大熵模型(Maximum Entropy Model)"></a>最大熵模型(Maximum Entropy Model)</h3><p>  用于判断模型预测结果好坏，针对样本，给每个类一个出现概率</p>
+<p>  LR就是使用最大熵模型作为优化目标的一个算法</p>
+<h3 id="隐马尔可夫-Hidden-Markov-Model"><a href="#隐马尔可夫-Hidden-Markov-Model" class="headerlink" title="隐马尔可夫(Hidden Markov Model)"></a>隐马尔可夫(Hidden Markov Model)</h3><p>  基于序列的预测方法，通过上一个状态预测下一个状态</p>
+<p>  之所以叫“隐”马尔科夫是因为它的状态本身是不可见的，我们只能根据状态生成的结果序列来学习可能的状态</p>
+<p>  适用场景：1. 用于序列的预测； 2. 用于生成序列</p>
 <h3 id="条件随机场-Conditional-Random-Field"><a href="#条件随机场-Conditional-Random-Field" class="headerlink" title="条件随机场(Conditional Random Field)"></a>条件随机场(Conditional Random Field)</h3><p>  典型例子是linear-chain CRF</p>
 
       
