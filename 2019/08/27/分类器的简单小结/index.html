@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="分类器没有最好的分类器，只有最合适的分类器 近邻(Nearest Neighbor)  例子：最典型的例子是KNN   思路：对于待判断的点，找到离它最近的几个数据点，根据它们的类型决定待判断点的类型   特点：完全跟着数据走，没有数学模型可言   适用情景：需要可解释性高的模型的时候 贝叶斯(Bayesian)  例子：典型例子是Naive Bayes   思路：根据条件概率计算待判断点的类型">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-31T19:04:45.956Z">
+<meta property="og:updated_time" content="2019-08-31T19:06:07.275Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分类器的简单小结">
 <meta name="twitter:description" content="分类器没有最好的分类器，只有最合适的分类器 近邻(Nearest Neighbor)  例子：最典型的例子是KNN   思路：对于待判断的点，找到离它最近的几个数据点，根据它们的类型决定待判断点的类型   特点：完全跟着数据走，没有数学模型可言   适用情景：需要可解释性高的模型的时候 贝叶斯(Bayesian)  例子：典型例子是Naive Bayes   思路：根据条件概率计算待判断点的类型">
@@ -343,7 +343,6 @@
 <h3 id="神经网络-Neural-Network"><a href="#神经网络-Neural-Network" class="headerlink" title="神经网络(Neural Network)"></a>神经网络(Neural Network)</h3><p>  思路：利用训练样本逐渐完善参数</p>
 <p>  特点：1. 相较于LR，引入大量中间层，能更好地捕捉输入特征之间的关系； 2. 准确率依赖于庞大的训练集。</p>
 <p>  适用情景：1. 数据量庞大，参数之间存在内在联系的时候； 2. 用于生成数据，用来做降维</p>
-<hr>
 <h2 id="集成学习算法-Ensemble-Learning"><a href="#集成学习算法-Ensemble-Learning" class="headerlink" title="集成学习算法(Ensemble Learning)"></a>集成学习算法(Ensemble Learning)</h2><p>  核心理念：将多个较弱的分类器结合起来，得到的结果会比一个强的分类器更好</p>
 <h3 id="提升算法-Boosting"><a href="#提升算法-Boosting" class="headerlink" title="提升算法(Boosting)"></a>提升算法(Boosting)</h3><p>  例子：AdaBoost，它的每一个弱分类器就是一个决策树</p>
 <p>  思路：从一个最基础的分类器开始，每次寻找一个最能解决当前错误样本的分类器，用加权取和(weighted sum)的方式将这个新的分类器结合进已有的分类器中</p>
@@ -353,7 +352,6 @@
 <p>  特点：因为随机选取训练集的特点，可以一定程度上避免过度拟合</p>
 <p>  适用情景：未知，但这个模型的效果和参数的选择关系比较大，用默认参数往往没有很好的效果，虽然调对参数结果会比决策树和LR好，但是模型也复杂了，因此没有特殊原因就不要用它了</p>
 <h3 id="多专家模型-Mixture-of-Experts"><a href="#多专家模型-Mixture-of-Experts" class="headerlink" title="多专家模型(Mixture of Experts)"></a>多专家模型(Mixture of Experts)</h3><p>  适用情景：主要用来合并神经网络的分类结果</p>
-<hr>
 <h2 id="预测模型"><a href="#预测模型" class="headerlink" title="预测模型"></a>预测模型</h2><p>  最大熵模型(Maximum Entropy Model)</p>
 <ul>
 <li>用于判断模型预测结果好坏，针对样本，给每个类一个出现概率</li>
