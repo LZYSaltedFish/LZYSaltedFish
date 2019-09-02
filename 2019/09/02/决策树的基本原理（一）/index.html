@@ -79,14 +79,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="决策树 Decision Tree递归学习 重要公式信息熵(Information Entropy)设当前样本集Ｄ中第ｋ类样本所占比例为pk (k = 1, 2, 3, …, |K|)，Ｋ为类别的总数（对于二元分类来说，Ｋ＝２）。Ent (D) 的值越小，则D的纯度越高。（这个公式也决定了信息增益的一个缺点：即信息增益对可取值数目多的特征有偏好（即该属性能取得值越多，信息增益，越偏向这个），因为特">
+<meta property="og:type" content="article">
+<meta property="og:title" content="决策树的基本原理（一）">
+<meta property="og:url" content="http://yoursite.com/2019/09/02/决策树的基本原理（一）/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="决策树 Decision Tree递归学习 重要公式信息熵(Information Entropy)设当前样本集Ｄ中第ｋ类样本所占比例为pk (k = 1, 2, 3, …, |K|)，Ｋ为类别的总数（对于二元分类来说，Ｋ＝２）。Ent (D) 的值越小，则D的纯度越高。（这个公式也决定了信息增益的一个缺点：即信息增益对可取值数目多的特征有偏好（即该属性能取得值越多，信息增益，越偏向这个），因为特">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-15T07:48:16.294Z">
+<meta property="og:updated_time" content="2019-09-02T15:08:43.885Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
+<meta name="twitter:title" content="决策树的基本原理（一）">
+<meta name="twitter:description" content="决策树 Decision Tree递归学习 重要公式信息熵(Information Entropy)设当前样本集Ｄ中第ｋ类样本所占比例为pk (k = 1, 2, 3, …, |K|)，Ｋ为类别的总数（对于二元分类来说，Ｋ＝２）。Ent (D) 的值越小，则D的纯度越高。（这个公式也决定了信息增益的一个缺点：即信息增益对可取值数目多的特征有偏好（即该属性能取得值越多，信息增益，越偏向这个），因为特">
 
 
 
@@ -116,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/02/决策树的基本原理（一）/">
 
 
 
 
 
-  <title>tags | Hexo</title>
+  <title>决策树的基本原理（一） | Hexo</title>
   
 
 
@@ -228,40 +231,147 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/02/决策树的基本原理（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LZY">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/myavatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 3 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/Salted-Fish/" style="font-size: 12px; color: #ccc">Salted Fish</a> <a href="/tags/学习笔记/" style="font-size: 30px; color: #111">学习笔记</a> <a href="/tags/机器学习/" style="font-size: 30px; color: #111">机器学习</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">决策树的基本原理（一）</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-02T16:50:46+08:00">
+                2019-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1 id="决策树-Decision-Tree"><a href="#决策树-Decision-Tree" class="headerlink" title="决策树 Decision Tree"></a>决策树 Decision Tree</h1><h2 id="递归学习"><a href="#递归学习" class="headerlink" title="递归学习"></a>递归学习</h2>
+<h2 id="重要公式"><a href="#重要公式" class="headerlink" title="重要公式"></a>重要公式</h2><h3 id="信息熵-Information-Entropy"><a href="#信息熵-Information-Entropy" class="headerlink" title="信息熵(Information Entropy)"></a>信息熵(Information Entropy)</h3><p>设当前样本集Ｄ中第ｋ类样本所占比例为pk (k = 1, 2, 3, …, |K|)，Ｋ为类别的总数（对于二元分类来说，Ｋ＝２）。<br>Ent (D) 的值越小，则D的纯度越高。<br>（这个公式也决定了信息增益的一个缺点：即信息增益对可取值数目多的特征有偏好（即该属性能取得值越多，信息增益，越偏向这个），因为特征可取的值越多，会导致“纯度”越大，即Ent（D）会很小，如果一个特征的离散个数与样本数相等，那么Ent（D）值会为0）</p>
+<h3 id="信息增益-Information-Gain"><a href="#信息增益-Information-Gain" class="headerlink" title="信息增益(Information Gain)"></a>信息增益(Information Gain)</h3><p>假定离散属性 a 有 V 个可能的取值{a1, a2, …,  aV}，如果使用特征 a 来对数据集D进行划分，则会产生V个分支结点，其中第v（小v）个结点包含了数据集D中所有在特征 a 上取值为 aV 的样本总数，记为DV。因此可以根据上面信息熵的公式计算出信息熵，再考虑到不同的分支结点所包含的样本数量不同，给分支节点赋予权重 |DV| / |D|，即样本数越多的分支节点的影响越大，因此，能够计算出特征 a 对样本集D进行划分所获得的“信息增益”</p>
+<h3 id="增益率-Gain-ratio"><a href="#增益率-Gain-ratio" class="headerlink" title="增益率(Gain ratio)"></a>增益率(Gain ratio)</h3><ul>
+<li>信息增益对可取值数目较多的属性有所偏好，使用增益率减少这种偏好可能带来的不好的影响</li>
+<li>属性a的固有值(intrinsic value)</li>
+</ul>
+<h3 id="基尼指数-Gini-index"><a href="#基尼指数-Gini-index" class="headerlink" title="基尼指数(Gini index)"></a>基尼指数(Gini index)</h3><ul>
+<li>CART决策树使用基尼指数来选择划分属性。基尼值Gini(D)表示数据集D的纯度</li>
+</ul>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/02/决策树/" rel="next" title>
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -294,8 +404,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -348,6 +467,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#决策树-Decision-Tree"><span class="nav-text">决策树 Decision Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#递归学习"><span class="nav-text">递归学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重要公式"><span class="nav-text">重要公式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#信息熵-Information-Entropy"><span class="nav-text">信息熵(Information Entropy)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#信息增益-Information-Gain"><span class="nav-text">信息增益(Information Gain)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增益率-Gain-ratio"><span class="nav-text">增益率(Gain ratio)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基尼指数-Gini-index"><span class="nav-text">基尼指数(Gini index)</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

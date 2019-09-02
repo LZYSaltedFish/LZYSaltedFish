@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="基础分类器没有最好的分类器，只有最合适的分类器 近邻(Nearest Neighbor)  例子：最典型的例子是KNN   思路：对于待判断的点，找到离它最近的几个数据点，根据它们的类型决定待判断点的类型   特点：完全跟着数据走，没有数学模型可言   适用情景：需要可解释性高的模型的时候 贝叶斯(Bayesian)  例子：典型例子是Naive Bayes   思路：根据条件概率计算待判断点的类">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-31T19:17:19.547Z">
+<meta property="og:updated_time" content="2019-09-02T16:51:46.289Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分类器的简单小结">
 <meta name="twitter:description" content="基础分类器没有最好的分类器，只有最合适的分类器 近邻(Nearest Neighbor)  例子：最典型的例子是KNN   思路：对于待判断的点，找到离它最近的几个数据点，根据它们的类型决定待判断点的类型   特点：完全跟着数据走，没有数学模型可言   适用情景：需要可解释性高的模型的时候 贝叶斯(Bayesian)  例子：典型例子是Naive Bayes   思路：根据条件概率计算待判断点的类">
@@ -323,10 +323,6 @@
 <h3 id="决策树-Decision-Tree"><a href="#决策树-Decision-Tree" class="headerlink" title="决策树(Decision Tree)"></a>决策树(Decision Tree)</h3><p>  思路：沿着特征做切分，随着层层递进，划分越来越细</p>
 <p>  特点：通过观察树的上层结构，能够对分类器的核心思路有一个直观的感受。但同时，它也是相对容易被攻击的分类器</p>
 <p>  适用情景：1. 数据分析师希望更好地理解手上的数据的时候； 2. 作为一些更有用的算法的基石</p>
-<h3 id="随机森林-Random-Forest"><a href="#随机森林-Random-Forest" class="headerlink" title="随机森林(Random Forest)"></a>随机森林(Random Forest)</h3><p>因为不需要很多参数调整就可以达到不错的效果，基本上不知道用什么方法的时候都可以先试一下随机森林</p>
-<p>  思路：首先随机选取不同的特征和训练样本，生成大量的决策树，然后综合这些决策树的结果来进行最终的分类</p>
-<p>  特点：相对于决策树，在准确性上有了很大的提升，同时一定程度上改善了决策树容易被攻击的特点</p>
-<p>  适用情景：数据维度相对低（几十维），同时对准确性有较高要求时</p>
 <h3 id="SVM支持向量机-Support-vector-machine"><a href="#SVM支持向量机-Support-vector-machine" class="headerlink" title="SVM支持向量机(Support vector machine)"></a>SVM支持向量机(Support vector machine)</h3><p>和随机森林一样，也是一个拿到数据就可以先尝试一下的算法</p>
 <p>  思路：找到不同类别之间的分界面，使得两类样本尽量落在面的两边，而且离分界面尽量远；利用核函数(kernel function)可以将平面映射(mapping)为曲面，进而提高SVM的适用范围</p>
 <p>  特点：相对来说，SVM尽量保持与样本间距离的性质导致它抗攻击能力更强</p>
@@ -351,6 +347,10 @@
 <h3 id="装袋算法-Bagging"><a href="#装袋算法-Bagging" class="headerlink" title="装袋算法(Bagging)"></a>装袋算法(Bagging)</h3><p>  思路：首先随机地抽取训练集，以之为基础训练多个弱分类器，然后通过取平均，或投票(voting)的方式决定最终的分类结果</p>
 <p>  特点：因为随机选取训练集的特点，可以一定程度上避免过度拟合</p>
 <p>  适用情景：未知，但这个模型的效果和参数的选择关系比较大，用默认参数往往没有很好的效果，虽然调对参数结果会比决策树和LR好，但是模型也复杂了，因此没有特殊原因就不要用它了</p>
+<h3 id="随机森林-Random-Forest"><a href="#随机森林-Random-Forest" class="headerlink" title="随机森林(Random Forest)"></a>随机森林(Random Forest)</h3><p>因为不需要很多参数调整就可以达到不错的效果，基本上不知道用什么方法的时候都可以先试一下随机森林</p>
+<p>  思路：首先随机选取不同的特征和训练样本，生成大量的决策树，然后综合这些决策树的结果来进行最终的分类</p>
+<p>  特点：相对于决策树，在准确性上有了很大的提升，同时一定程度上改善了决策树容易被攻击的特点</p>
+<p>  适用情景：数据维度相对低（几十维），同时对准确性有较高要求时</p>
 <h3 id="多专家模型-Mixture-of-Experts"><a href="#多专家模型-Mixture-of-Experts" class="headerlink" title="多专家模型(Mixture of Experts)"></a>多专家模型(Mixture of Experts)</h3><p>  适用情景：主要用来合并神经网络的分类结果</p>
 <h2 id="预测模型"><a href="#预测模型" class="headerlink" title="预测模型"></a>预测模型</h2><h3 id="最大熵模型-Maximum-Entropy-Model"><a href="#最大熵模型-Maximum-Entropy-Model" class="headerlink" title="最大熵模型(Maximum Entropy Model)"></a>最大熵模型(Maximum Entropy Model)</h3><p>  用于判断模型预测结果好坏，针对样本，给每个类一个出现概率</p>
 <p>  LR就是使用最大熵模型作为优化目标的一个算法</p>
@@ -399,6 +399,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/02/决策树/" rel="prev" title>
+                 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -477,7 +481,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -523,7 +527,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础分类器"><span class="nav-text">基础分类器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#近邻-Nearest-Neighbor"><span class="nav-text">近邻(Nearest Neighbor)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贝叶斯-Bayesian"><span class="nav-text">贝叶斯(Bayesian)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#决策树-Decision-Tree"><span class="nav-text">决策树(Decision Tree)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机森林-Random-Forest"><span class="nav-text">随机森林(Random Forest)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVM支持向量机-Support-vector-machine"><span class="nav-text">SVM支持向量机(Support vector machine)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LR逻辑回归-Logistic-Regression"><span class="nav-text">LR逻辑回归(Logistic Regression)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判别分析-Discriminant-Analysis"><span class="nav-text">判别分析(Discriminant Analysis)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#神经网络-Neural-Network"><span class="nav-text">神经网络(Neural Network)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集成学习算法-Ensemble-Learning"><span class="nav-text">集成学习算法(Ensemble Learning)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#提升算法-Boosting"><span class="nav-text">提升算法(Boosting)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#装袋算法-Bagging"><span class="nav-text">装袋算法(Bagging)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多专家模型-Mixture-of-Experts"><span class="nav-text">多专家模型(Mixture of Experts)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预测模型"><span class="nav-text">预测模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最大熵模型-Maximum-Entropy-Model"><span class="nav-text">最大熵模型(Maximum Entropy Model)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#隐马尔可夫-Hidden-Markov-Model"><span class="nav-text">隐马尔可夫(Hidden Markov Model)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件随机场-Conditional-Random-Field"><span class="nav-text">条件随机场(Conditional Random Field)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础分类器"><span class="nav-text">基础分类器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#近邻-Nearest-Neighbor"><span class="nav-text">近邻(Nearest Neighbor)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贝叶斯-Bayesian"><span class="nav-text">贝叶斯(Bayesian)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#决策树-Decision-Tree"><span class="nav-text">决策树(Decision Tree)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVM支持向量机-Support-vector-machine"><span class="nav-text">SVM支持向量机(Support vector machine)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LR逻辑回归-Logistic-Regression"><span class="nav-text">LR逻辑回归(Logistic Regression)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判别分析-Discriminant-Analysis"><span class="nav-text">判别分析(Discriminant Analysis)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#神经网络-Neural-Network"><span class="nav-text">神经网络(Neural Network)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集成学习算法-Ensemble-Learning"><span class="nav-text">集成学习算法(Ensemble Learning)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#提升算法-Boosting"><span class="nav-text">提升算法(Boosting)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#装袋算法-Bagging"><span class="nav-text">装袋算法(Bagging)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机森林-Random-Forest"><span class="nav-text">随机森林(Random Forest)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多专家模型-Mixture-of-Experts"><span class="nav-text">多专家模型(Mixture of Experts)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预测模型"><span class="nav-text">预测模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最大熵模型-Maximum-Entropy-Model"><span class="nav-text">最大熵模型(Maximum Entropy Model)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#隐马尔可夫-Hidden-Markov-Model"><span class="nav-text">隐马尔可夫(Hidden Markov Model)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件随机场-Conditional-Random-Field"><span class="nav-text">条件随机场(Conditional Random Field)</span></a></li></ol></li></ol></div>
             
 
           </div>
