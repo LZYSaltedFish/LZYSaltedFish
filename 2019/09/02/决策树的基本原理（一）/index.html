@@ -86,10 +86,12 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="决策树 Decision Tree递归学习 重要公式信息熵(Information Entropy)设当前样本集Ｄ中第ｋ类样本所占比例为pk (k = 1, 2, 3, …, |K|)，Ｋ为类别的总数（对于二元分类来说，Ｋ＝２）。Ent (D) 的值越小，则D的纯度越高。（这个公式也决定了信息增益的一个缺点：即信息增益对可取值数目多的特征有偏好（即该属性能取得值越多，信息增益，越偏向这个），因为特">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-02T16:55:04.350Z">
+<meta property="og:image" content="http://yoursite.com/2019/09/02/决策树的基本原理（一）/algorithm.png">
+<meta property="og:updated_time" content="2019-09-02T16:57:56.612Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="决策树的基本原理（一）">
 <meta name="twitter:description" content="决策树 Decision Tree递归学习 重要公式信息熵(Information Entropy)设当前样本集Ｄ中第ｋ类样本所占比例为pk (k = 1, 2, 3, …, |K|)，Ｋ为类别的总数（对于二元分类来说，Ｋ＝２）。Ent (D) 的值越小，则D的纯度越高。（这个公式也决定了信息增益的一个缺点：即信息增益对可取值数目多的特征有偏好（即该属性能取得值越多，信息增益，越偏向这个），因为特">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/02/决策树的基本原理（一）/algorithm.png">
 
 
 
@@ -310,7 +312,7 @@
       
 
       
-        <h1 id="决策树-Decision-Tree"><a href="#决策树-Decision-Tree" class="headerlink" title="决策树 Decision Tree"></a>决策树 Decision Tree</h1><h2 id="递归学习"><a href="#递归学习" class="headerlink" title="递归学习"></a>递归学习</h2>
+        <h1 id="决策树-Decision-Tree"><a href="#决策树-Decision-Tree" class="headerlink" title="决策树 Decision Tree"></a>决策树 Decision Tree</h1><h2 id="递归学习"><a href="#递归学习" class="headerlink" title="递归学习"></a>递归学习</h2><img src="/2019/09/02/决策树的基本原理（一）/algorithm.png" title="algorithm_of_decisiontree">
 <h2 id="重要公式"><a href="#重要公式" class="headerlink" title="重要公式"></a>重要公式</h2><h3 id="信息熵-Information-Entropy"><a href="#信息熵-Information-Entropy" class="headerlink" title="信息熵(Information Entropy)"></a>信息熵(Information Entropy)</h3><p>设当前样本集Ｄ中第ｋ类样本所占比例为pk (k = 1, 2, 3, …, |K|)，Ｋ为类别的总数（对于二元分类来说，Ｋ＝２）。<br>Ent (D) 的值越小，则D的纯度越高。<br>（这个公式也决定了信息增益的一个缺点：即信息增益对可取值数目多的特征有偏好（即该属性能取得值越多，信息增益，越偏向这个），因为特征可取的值越多，会导致“纯度”越大，即Ent（D）会很小，如果一个特征的离散个数与样本数相等，那么Ent（D）值会为0）</p>
 <h3 id="信息增益-Information-Gain"><a href="#信息增益-Information-Gain" class="headerlink" title="信息增益(Information Gain)"></a>信息增益(Information Gain)</h3><p>假定离散属性 a 有 V 个可能的取值{a1, a2, …,  aV}，如果使用特征 a 来对数据集D进行划分，则会产生V个分支结点，其中第v（小v）个结点包含了数据集D中所有在特征 a 上取值为 aV 的样本总数，记为DV。因此可以根据上面信息熵的公式计算出信息熵，再考虑到不同的分支结点所包含的样本数量不同，给分支节点赋予权重 |DV| / |D|，即样本数越多的分支节点的影响越大，因此，能够计算出特征 a 对样本集D进行划分所获得的“信息增益”</p>
 <h3 id="增益率-Gain-ratio"><a href="#增益率-Gain-ratio" class="headerlink" title="增益率(Gain ratio)"></a>增益率(Gain ratio)</h3><ul>
