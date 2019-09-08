@@ -87,7 +87,7 @@
 <meta property="og:description" content="决策树 Decision Tree常见的决策树算法有 ID3, C4.5, CART 递归学习 重要公式信息熵(Information Entropy) $Ent(D) = - \sum_{k=1}^{K} p_{k} log_{2}p_{k}$  设当前样本集 D 中第 K 类样本所占比例为 $p_k$ (k = 1, 2, 3, …, |K|)，K 为类别的总数（对于二元分类来说 K=2）。E">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/09/02/决策树的基本原理（一）/algorithm.png">
-<meta property="og:updated_time" content="2019-09-08T04:46:10.713Z">
+<meta property="og:updated_time" content="2019-09-08T04:52:23.070Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="决策树的基本原理（一）">
 <meta name="twitter:description" content="决策树 Decision Tree常见的决策树算法有 ID3, C4.5, CART 递归学习 重要公式信息熵(Information Entropy) $Ent(D) = - \sum_{k=1}^{K} p_{k} log_{2}p_{k}$  设当前样本集 D 中第 K 类样本所占比例为 $p_k$ (k = 1, 2, 3, …, |K|)，K 为类别的总数（对于二元分类来说 K=2）。E">
@@ -338,7 +338,7 @@
 <li>IV(a) 是属性 a 的固有值（intrinsic value）</li>
 </ul>
 <h3 id="CART算法-基尼指数-Gini-index"><a href="#CART算法-基尼指数-Gini-index" class="headerlink" title="CART算法 基尼指数(Gini index)"></a>CART算法 基尼指数(Gini index)</h3><blockquote>
-<p>$Gini(D) &amp;= \sum_{k=1}{|K|}\sum_{k, \ne k} p_{k} p_{k,} \\ &amp;= 1-\sum_{k=1}{|K|} p^{2}_{k}$</p>
+<p>$Gini(D) = \sum_{k=1}{|K|}\sum_{k, \ne k} p_{k} p_{k,} \\ = 1-\sum_{k=1}{|K|} p^{2}_{k}$</p>
 <p>$Gini _ index(D,a) = \sum_{v=1}{V} \frac{|D^v|}{|D|} Gini(D^v)$</p>
 </blockquote>
 <ul>
