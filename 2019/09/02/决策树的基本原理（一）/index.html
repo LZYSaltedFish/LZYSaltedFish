@@ -87,9 +87,7 @@
 <meta property="og:description" content="决策树 Decision Tree常见的决策树算法有 ID3, C4.5, CART 递归学习 重要公式信息熵(Information Entropy) $Ent(D) = - \sum_{k=1}^{K} p_{k} log_{2}p_{k}$  设当前样本集 D 中第 K 类样本所占比例为 $p_k$ (k = 1, 2, 3, …, |K|)，K 为类别的总数（对于二元分类来说 K=2）。E">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/09/02/决策树的基本原理（一）/algorithm.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/02/决策树的基本原理（一）/Gini_index.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/02/决策树的基本原理（一）/Best_attribute_for_Gini_index.png">
-<meta property="og:updated_time" content="2019-09-08T04:27:13.079Z">
+<meta property="og:updated_time" content="2019-09-08T04:38:19.806Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="决策树的基本原理（一）">
 <meta name="twitter:description" content="决策树 Decision Tree常见的决策树算法有 ID3, C4.5, CART 递归学习 重要公式信息熵(Information Entropy) $Ent(D) = - \sum_{k=1}^{K} p_{k} log_{2}p_{k}$  设当前样本集 D 中第 K 类样本所占比例为 $p_k$ (k = 1, 2, 3, …, |K|)，K 为类别的总数（对于二元分类来说 K=2）。E">
@@ -335,21 +333,21 @@
 </ul>
 <blockquote>
 <p>$IV(a) = - \sum_{v=1}^{V} \frac{|D^v|}{||D} log_{2}\frac{|D^v|}{|D|}$</p>
-<ul>
-<li>IV(a)是属性a的固有值(intrinsic value)</li>
-</ul>
 </blockquote>
+<ul>
+<li>IV(a) 是属性 a 的固有值（intrinsic value）</li>
+</ul>
 <h3 id="CART算法-基尼指数-Gini-index"><a href="#CART算法-基尼指数-Gini-index" class="headerlink" title="CART算法 基尼指数(Gini index)"></a>CART算法 基尼指数(Gini index)</h3><blockquote>
-<p>$Gini(D) &amp;= \sum_{k=1}{|K|}\sum_{k, \ne k} p_{k} p_{k,} \\ &amp;= 1-\sum_{k-1}$<br><img src="/2019/09/02/决策树的基本原理（一）/Gini_index.png" title="Gini_index"></p>
+<p>$Gini(D) &amp;= \sum_{k=1}{|K|}\sum_{k, \ne k} p_{k} p_{k,} \\ &amp;= 1-\sum_{k=1}{|K|} p^{2}_{k}$</p>
+<p>$Gini_ index(D,a) = \sum_{v=1}{V} \frac{|D^v|}{|D|} Gini(D^v)$</p>
 </blockquote>
 <ul>
-<li>CART决策树使用基尼指数来选择划分属性。基尼值Gini(D)表示数据集D的纯度</li>
+<li><p>CART决策树使用基尼指数来选择划分属性。基尼值 Gini(D) 表示数据集 D 的纯度</p>
+</li>
+<li><p>选择使得划分后基尼指数最小的属性作为最优划分属性，即 $a_{*} = arg_{a\in A} min $ $ Gini_ index(D,a)$</p>
+</li>
 </ul>
-<img src="/2019/09/02/决策树的基本原理（一）/Best_attribute_for_Gini_index.png" title="find_the_best_attribute">
-<ul>
-<li>选择使得划分后基尼指数最小的属性作为最优划分属性</li>
-</ul>
-<p>仍待更新完善…</p>
+<p><strong><em>仍待更新完善…</em></strong></p>
 
       
     </div>
