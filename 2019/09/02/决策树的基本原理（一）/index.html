@@ -87,7 +87,7 @@
 <meta property="og:description" content="决策树 Decision Tree常见的决策树算法有 ID3, C4.5, CART 递归学习 重要公式信息熵(Information Entropy) $Ent(D) = - \sum_{k=1}^{K} p_{k} log_{2}p_{k}$  设当前样本集 D 中第 K 类样本所占比例为 $p_k$ (k = 1, 2, 3, …, |K|)，K 为类别的总数（对于二元分类来说 K=2）。E">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/09/02/决策树的基本原理（一）/algorithm.png">
-<meta property="og:updated_time" content="2019-09-08T04:53:16.738Z">
+<meta property="og:updated_time" content="2019-09-08T04:58:42.668Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="决策树的基本原理（一）">
 <meta name="twitter:description" content="决策树 Decision Tree常见的决策树算法有 ID3, C4.5, CART 递归学习 重要公式信息熵(Information Entropy) $Ent(D) = - \sum_{k=1}^{K} p_{k} log_{2}p_{k}$  设当前样本集 D 中第 K 类样本所占比例为 $p_k$ (k = 1, 2, 3, …, |K|)，K 为类别的总数（对于二元分类来说 K=2）。E">
@@ -332,14 +332,14 @@
 <li>信息增益对可取值数目较多的属性有所偏好，使用增益率减少这种偏好可能带来的不好的影响</li>
 </ul>
 <blockquote>
-<p>$IV(a) = - \sum_{v=1}^{V} \frac{|D^v|}{||D} log_{2}\frac{|D^v|}{|D|}$</p>
+<p>$IV(a) = - \sum_{v=1}^{V} \frac{|D^v|}{|D|} log_{2}\frac{|D^v|}{|D|}$</p>
 </blockquote>
 <ul>
 <li>IV(a) 是属性 a 的固有值（intrinsic value）</li>
 </ul>
 <h3 id="CART算法-基尼指数-Gini-index"><a href="#CART算法-基尼指数-Gini-index" class="headerlink" title="CART算法 基尼指数(Gini index)"></a>CART算法 基尼指数(Gini index)</h3><blockquote>
-<p>$Gini(D) = \sum_{k=1}{|K|}\sum_{k, \ne k} p_{k} p_{k,} \\ = 1-\sum_{k=1}{|K|} p^{2}_{k}$</p>
-<p>$Gini _ index(D,a) = \sum_{v=1}{V} \frac{|D^v|}{|D|} Gini(D^v)$</p>
+<p>$Gini(D) &amp;=&amp; \sum_{k=1}^{|K|}\sum_{k’ \ne k} p_{k} p_{k’} \\ &amp;=&amp; 1-\sum_{k=1}^{|K|} p^{2}_{k}$</p>
+<p>$Gini _ index(D,a) = \sum_{v=1}^{V} \frac{|D^v|}{|D|} Gini(D^v)$</p>
 </blockquote>
 <ul>
 <li><p>CART决策树使用基尼指数来选择划分属性。基尼值 Gini(D) 表示数据集 D 的纯度</p>
