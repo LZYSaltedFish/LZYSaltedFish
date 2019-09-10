@@ -313,6 +313,205 @@
           
             <h1 id="决策树-Decision-Tree"><a href="#决策树-Decision-Tree" class="headerlink" title="决策树 Decision Tree"></a>决策树 Decision Tree</h1><p>常见的决策树算法有 ID3, C4.5, CART</p>
 <h2 id="递归学习"><a href="#递归学习" class="headerlink" title="递归学习"></a>递归学习</h2><img src="/2019/09/02/决策树的基本原理（一）/algorithm.png" title="algorithm_of_decisiontree">
+<hr>
+<h2 id="离散型样例数据"><a href="#离散型样例数据" class="headerlink" title="离散型样例数据"></a>离散型样例数据</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">组合</th>
+<th style="text-align:center">试点</th>
+<th style="text-align:center">株高（cm）</th>
+<th style="text-align:center">穗长（cm）</th>
+<th style="text-align:center">每穗总粒数</th>
+<th style="text-align:center">每穗实粒数</th>
+<th style="text-align:center">成穗率（%）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">紫两优10号</td>
+<td style="text-align:center">芜湖</td>
+<td style="text-align:center">较高</td>
+<td style="text-align:center">较低</td>
+<td style="text-align:center">高</td>
+<td style="text-align:center">较高</td>
+<td style="text-align:center">高</td>
+</tr>
+<tr>
+<td style="text-align:center">辐优886</td>
+<td style="text-align:center">凤阳</td>
+<td style="text-align:center">较低</td>
+<td style="text-align:center">较高</td>
+<td style="text-align:center">高</td>
+<td style="text-align:center">高</td>
+<td style="text-align:center">高</td>
+</tr>
+<tr>
+<td style="text-align:center">C两优111</td>
+<td style="text-align:center">凤阳</td>
+<td style="text-align:center">低</td>
+<td style="text-align:center">低</td>
+<td style="text-align:center">较低</td>
+<td style="text-align:center">较低</td>
+<td style="text-align:center">高</td>
+</tr>
+<tr>
+<td style="text-align:center">紫两优10号</td>
+<td style="text-align:center">省院</td>
+<td style="text-align:center">较低</td>
+<td style="text-align:center">高</td>
+<td style="text-align:center">低</td>
+<td style="text-align:center">低</td>
+<td style="text-align:center">高</td>
+</tr>
+<tr>
+<td style="text-align:center">西农优5号</td>
+<td style="text-align:center">凤阳</td>
+<td style="text-align:center">较低</td>
+<td style="text-align:center">较低</td>
+<td style="text-align:center">较低</td>
+<td style="text-align:center">中</td>
+<td style="text-align:center">高</td>
+</tr>
+<tr>
+<td style="text-align:center">C两优111</td>
+<td style="text-align:center">芜湖</td>
+<td style="text-align:center">较低</td>
+<td style="text-align:center">较低</td>
+<td style="text-align:center">中</td>
+<td style="text-align:center">中</td>
+<td style="text-align:center">高</td>
+</tr>
+<tr>
+<td style="text-align:center">辐优886</td>
+<td style="text-align:center">六安</td>
+<td style="text-align:center">中</td>
+<td style="text-align:center">较低</td>
+<td style="text-align:center">中</td>
+<td style="text-align:center">低</td>
+<td style="text-align:center">高</td>
+</tr>
+<tr>
+<td style="text-align:center">C两优111</td>
+<td style="text-align:center">全椒</td>
+<td style="text-align:center">较低</td>
+<td style="text-align:center">中</td>
+<td style="text-align:center">中</td>
+<td style="text-align:center">较低</td>
+<td style="text-align:center">高</td>
+</tr>
+<tr>
+<td style="text-align:center">西农优5号</td>
+<td style="text-align:center">芜湖</td>
+<td style="text-align:center">中</td>
+<td style="text-align:center">中</td>
+<td style="text-align:center">较高</td>
+<td style="text-align:center">较高</td>
+<td style="text-align:center">高</td>
+</tr>
+<tr>
+<td style="text-align:center">紫两优10号</td>
+<td style="text-align:center">六安</td>
+<td style="text-align:center">较高</td>
+<td style="text-align:center">中</td>
+<td style="text-align:center">高</td>
+<td style="text-align:center">高</td>
+<td style="text-align:center">高</td>
+</tr>
+<tr>
+<td style="text-align:center">C两优111</td>
+<td style="text-align:center">省院</td>
+<td style="text-align:center">低</td>
+<td style="text-align:center">低</td>
+<td style="text-align:center">较低</td>
+<td style="text-align:center">中</td>
+<td style="text-align:center">高</td>
+</tr>
+<tr>
+<td style="text-align:center">紫两优10号</td>
+<td style="text-align:center">凤阳</td>
+<td style="text-align:center">中</td>
+<td style="text-align:center">低</td>
+<td style="text-align:center">中</td>
+<td style="text-align:center">较高</td>
+<td style="text-align:center">高</td>
+</tr>
+<tr>
+<td style="text-align:center">西农优5号</td>
+<td style="text-align:center">省院</td>
+<td style="text-align:center">中</td>
+<td style="text-align:center">高</td>
+<td style="text-align:center">中</td>
+<td style="text-align:center">较高</td>
+<td style="text-align:center">低</td>
+</tr>
+<tr>
+<td style="text-align:center">辐优886</td>
+<td style="text-align:center">芜湖</td>
+<td style="text-align:center">中</td>
+<td style="text-align:center">较高</td>
+<td style="text-align:center">较低</td>
+<td style="text-align:center">较低</td>
+<td style="text-align:center">低</td>
+</tr>
+<tr>
+<td style="text-align:center">C两优111</td>
+<td style="text-align:center">六安</td>
+<td style="text-align:center">低</td>
+<td style="text-align:center">较低</td>
+<td style="text-align:center">低</td>
+<td style="text-align:center">低</td>
+<td style="text-align:center">低</td>
+</tr>
+<tr>
+<td style="text-align:center">辐优886</td>
+<td style="text-align:center">省院</td>
+<td style="text-align:center">高</td>
+<td style="text-align:center">较低</td>
+<td style="text-align:center">较高</td>
+<td style="text-align:center">低</td>
+<td style="text-align:center">低</td>
+</tr>
+<tr>
+<td style="text-align:center">辐优886</td>
+<td style="text-align:center">全椒</td>
+<td style="text-align:center">高</td>
+<td style="text-align:center">低</td>
+<td style="text-align:center">中</td>
+<td style="text-align:center">低</td>
+<td style="text-align:center">低</td>
+</tr>
+<tr>
+<td style="text-align:center">西农优5号</td>
+<td style="text-align:center">全椒</td>
+<td style="text-align:center">高</td>
+<td style="text-align:center">较低</td>
+<td style="text-align:center">较低</td>
+<td style="text-align:center">较低</td>
+<td style="text-align:center">低</td>
+</tr>
+<tr>
+<td style="text-align:center">紫两优10号</td>
+<td style="text-align:center">全椒</td>
+<td style="text-align:center">较高</td>
+<td style="text-align:center">较高</td>
+<td style="text-align:center">较高</td>
+<td style="text-align:center">中</td>
+<td style="text-align:center">低</td>
+</tr>
+<tr>
+<td style="text-align:center">西农优5号</td>
+<td style="text-align:center">六安</td>
+<td style="text-align:center">较高</td>
+<td style="text-align:center">较低</td>
+<td style="text-align:center">中</td>
+<td style="text-align:center">较高</td>
+<td style="text-align:center">低</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
 <h2 id="重要公式"><a href="#重要公式" class="headerlink" title="重要公式"></a>重要公式</h2><h3 id="信息熵-Information-Entropy"><a href="#信息熵-Information-Entropy" class="headerlink" title="信息熵(Information Entropy)"></a>信息熵(Information Entropy)</h3><blockquote>
 <p>$Ent(D) = - \sum_{k=1}^{K} p_{k} log_{2}p_{k}$</p>
 </blockquote>
@@ -320,6 +519,8 @@
 <ul>
 <li>这个公式也决定了信息增益的一个缺点：即信息增益对可取值数目多的特征有偏好，因为特征可取的值越多，会导致“纯度”越大，即 Ent(D) 会很小，如果一个特征的离散个数与样本数相等，那么 Ent(D)值会为0</li>
 </ul>
+<hr>
+<h4 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h4><hr>
 <h3 id="ID3算法-信息增益-Information-Gain"><a href="#ID3算法-信息增益-Information-Gain" class="headerlink" title="ID3算法 信息增益(Information Gain)"></a>ID3算法 信息增益(Information Gain)</h3><blockquote>
 <p>$Gain(D,a) = Ent(D) - \sum_{v=1}^{V} \frac{|D^v|}{|D|} Ent(D^v)$</p>
 </blockquote>
