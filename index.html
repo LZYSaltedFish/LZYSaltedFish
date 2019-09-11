@@ -335,10 +335,12 @@
 <p>或<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chrome output.html</span><br></pre></td></tr></table></figure></p>
 <p>打开指定的 html 文件了</p>
 <p>但是本咸鱼还不满足，我还想在任何目录下都可以用这个方便的 <code>chrome.bat</code> 打开 html 文件</p>
-<h3 id="方案三"><a href="#方案三" class="headerlink" title="方案三"></a>方案三</h3><h4 id="配置-Path-环境变量"><a href="#配置-Path-环境变量" class="headerlink" title="配置 Path 环境变量"></a>配置 Path 环境变量</h4><p>首先把 <code>chrome.bat</code> 放在一个安全的地方，然后把它的绝对路径添加进环境变量  </p>
+<h3 id="方案三"><a href="#方案三" class="headerlink" title="方案三"></a>方案三</h3><h4 id="配置-Path-环境变量"><a href="#配置-Path-环境变量" class="headerlink" title="配置 Path 环境变量"></a>配置 Path 环境变量</h4><p>首先把 <code>chrome.bat</code> 放在一个安全的地方，然后把它所在的目录的绝对路径添加进环境变量</p>
+<p>（也可以放在本来就在 %PATH% 的目录中，如 <code>C:\Windows\system32</code>）</p>
 <p>重启  </p>
 <p><code>chrome output.html</code></p>
 <p>Chrome 神奇地打开了<br><img src="/2019/09/11/更方便地用命令行打开浏览器/result.jpg" title="成功打开"></p>
+<h3 id="方案四"><a href="#方案四" class="headerlink" title="方案四"></a>方案四</h3><p>直接 <code>start output.html</code> 就行了，效果和双击打开一样。</p>
 <p>于是咸鱼又能继续愉快地水博客了~</p>
 
           
