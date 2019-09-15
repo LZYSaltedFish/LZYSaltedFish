@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="决策树 Decision Tree摘要【学习笔记】常见的决策树算法有 ID3, C4.5, CART该篇主要介绍三种决策树算法的基本原理及样例示范">
+<meta name="description" content="摘要【学习笔记】常见的决策树算法有 ID3, C4.5, CART该篇主要介绍三种决策树算法的基本原理及样例示范">
 <meta name="keywords" content="学习笔记,机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="决策树的基本原理（一）">
 <meta property="og:url" content="http://yoursite.com/2019/09/02/决策树的基本原理（一）/index.html">
 <meta property="og:site_name" content="LZY&#39;s Blog">
-<meta property="og:description" content="决策树 Decision Tree摘要【学习笔记】常见的决策树算法有 ID3, C4.5, CART该篇主要介绍三种决策树算法的基本原理及样例示范">
+<meta property="og:description" content="摘要【学习笔记】常见的决策树算法有 ID3, C4.5, CART该篇主要介绍三种决策树算法的基本原理及样例示范">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/09/02/决策树的基本原理（一）/algorithm.png">
-<meta property="og:updated_time" content="2019-09-15T12:31:33.217Z">
+<meta property="og:updated_time" content="2019-09-15T12:44:03.784Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="决策树的基本原理（一）">
-<meta name="twitter:description" content="决策树 Decision Tree摘要【学习笔记】常见的决策树算法有 ID3, C4.5, CART该篇主要介绍三种决策树算法的基本原理及样例示范">
+<meta name="twitter:description" content="摘要【学习笔记】常见的决策树算法有 ID3, C4.5, CART该篇主要介绍三种决策树算法的基本原理及样例示范">
 <meta name="twitter:image" content="http://yoursite.com/2019/09/02/决策树的基本原理（一）/algorithm.png">
 
 
@@ -311,9 +311,9 @@
       
 
       
-        <h1 id="决策树-Decision-Tree"><a href="#决策树-Decision-Tree" class="headerlink" title="决策树 Decision Tree"></a>决策树 Decision Tree</h1><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>【学习笔记】<br>常见的决策树算法有 ID3, C4.5, CART<br>该篇主要介绍三种决策树算法的基本原理及样例示范  </p>
+        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>【学习笔记】<br>常见的决策树算法有 ID3, C4.5, CART<br>该篇主要介绍三种决策树算法的基本原理及样例示范  </p>
 <a id="more"></a>
-<h2 id="递归学习"><a href="#递归学习" class="headerlink" title="递归学习"></a>递归学习</h2><img src="/2019/09/02/决策树的基本原理（一）/algorithm.png" title="algorithm_of_decisiontree">
+<h1 id="决策树-Decision-Tree"><a href="#决策树-Decision-Tree" class="headerlink" title="决策树 Decision Tree"></a>决策树 Decision Tree</h1><h2 id="递归学习"><a href="#递归学习" class="headerlink" title="递归学习"></a>递归学习</h2><img src="/2019/09/02/决策树的基本原理（一）/algorithm.png" title="algorithm_of_decisiontree">
 <hr>
 <h2 id="离散型样例数据"><a href="#离散型样例数据" class="headerlink" title="离散型样例数据"></a>离散型样例数据</h2><p>以下为部分离散化处理后的“水稻经济性状数据”，我们以组合、试点、株高、穗长、每穗总粒数、每穗实粒数为特征属性，根据成穗率将样本划分为高、中、低三类</p>
 <div class="table-container">
@@ -1002,7 +1002,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#决策树-Decision-Tree"><span class="nav-text">决策树 Decision Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递归学习"><span class="nav-text">递归学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离散型样例数据"><span class="nav-text">离散型样例数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重要公式"><span class="nav-text">重要公式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#信息熵-Information-Entropy"><span class="nav-text">信息熵(Information Entropy)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ID3算法-信息增益-Information-Gain"><span class="nav-text">ID3算法 信息增益(Information Gain)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#样本示例"><span class="nav-text">样本示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C4-5算法-增益率-Gain-ratio"><span class="nav-text">C4.5算法 增益率(Gain ratio)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CART算法-基尼指数-Gini-index"><span class="nav-text">CART算法 基尼指数(Gini index)</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-text">摘要</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#决策树-Decision-Tree"><span class="nav-text">决策树 Decision Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#递归学习"><span class="nav-text">递归学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离散型样例数据"><span class="nav-text">离散型样例数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重要公式"><span class="nav-text">重要公式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#信息熵-Information-Entropy"><span class="nav-text">信息熵(Information Entropy)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ID3算法-信息增益-Information-Gain"><span class="nav-text">ID3算法 信息增益(Information Gain)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#样本示例"><span class="nav-text">样本示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C4-5算法-增益率-Gain-ratio"><span class="nav-text">C4.5算法 增益率(Gain ratio)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CART算法-基尼指数-Gini-index"><span class="nav-text">CART算法 基尼指数(Gini index)</span></a></li></ol></li></ol></li></div>
             
 
           </div>
