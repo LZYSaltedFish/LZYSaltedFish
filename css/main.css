@@ -1443,6 +1443,9 @@ pre .javascript .function {
   color: #666;
   border-bottom: none;
 }
+.posts-collapse .collection-title {
+  color: #ff4161;
+}
 .page-home .post-type-quote .post-header,
 .page-post-detail .post-type-quote .post-header,
 .page-home .post-type-quote .post-tags,
@@ -1540,6 +1543,12 @@ pre .javascript .function {
   .posts-expand .post-comments-count {
     display: none;
   }
+}
+.post-time {
+  color: #ff4161;
+}
+.post-title-link {
+  color: #ff4161;
 }
 .post-button {
   margin-top: 40px;
@@ -1819,7 +1828,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a428ff;
+  background: #2bf055;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2982,13 +2991,13 @@ pre .javascript .function {
   text-overflow: ellipsis;
 }
 .site-state-item-count {
-  color: #ff5f7a;
+  color: #ff4161;
 }
 .site-state-item-name {
-  color: #ff778e;
+  color: #ff8ea1;
 }
 .site-author-name {
-  color: #ff5f7a;
+  color: #ff4161;
 }
 @media (max-width: 767px) {
   .post-body {
