@@ -1547,9 +1547,6 @@ pre .javascript .function {
 .post-time {
   color: #ff4161;
 }
-.post-title-link {
-  color: #ff4161;
-}
 .post-button {
   margin-top: 40px;
 }
@@ -1828,7 +1825,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #2bf055;
+  background: #ff2dff;
 }
 .links-of-blogroll {
   font-size: 13px;
