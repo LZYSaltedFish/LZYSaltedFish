@@ -88,7 +88,7 @@
 <meta property="og:description" content="摘要【学习笔记】常见的决策树算法有 ID3, C4.5, CART该篇主要介绍三种决策树算法的基本原理及样例示范">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/09/02/决策树的基本原理（一）/algorithm.png">
-<meta property="og:updated_time" content="2019-09-15T12:44:03.784Z">
+<meta property="og:updated_time" content="2019-09-16T01:27:36.241Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="决策树的基本原理（一）">
 <meta name="twitter:description" content="摘要【学习笔记】常见的决策树算法有 ID3, C4.5, CART该篇主要介绍三种决策树算法的基本原理及样例示范">
@@ -562,7 +562,7 @@
 </tbody>
 </table>
 </div>
-<p>仅有成穗率低一个类别，可以计算出该样本子集的纯度为<br>$Ent(D^1) = -\sum_{k=1}^{3}p_{k}log_{2}p_{k} = -(1\times log_{2}1 + 0\times 0 + 0\times 0) = 0$</p>
+<p>仅有成穗率低一个类别，可以计算出该样本子集的信息熵为<br>$Ent(D^1) = -\sum_{k=1}^{3}p_{k}log_{2}p_{k} = -(1\times log_{2}1 + 0\times 0 + 0\times 0) = 0$</p>
 <div class="table-container">
 <table>
 <thead>
@@ -787,7 +787,7 @@
 </tbody>
 </table>
 </div>
-<p>$Ent(D^5) = 0.918$<br>$Ent(D) = 1.54$<br>因此信息增益为<br>$Gain(D,株高) = Ent(D) - \sum_{v=1}^{5} \frac{|D^v|}{|D|}Ent(D^v) = 1.54 - 0.618 = 0.922$<br>同理可得<br>$Gain(D, 组合) = 0.155$<br>$Gain(D, 试点) = 0.553$<br>$Gain(D, 穗长) = 0.277$<br>$Gain(D, 每穗总粒数) = 0.301$<br>$Gain(D, 每穗实粒数) = 0.116$  </p>
+<p>$Ent(D^5) = 0.918$<br>$Ent(D) = 1.539$<br>因此信息增益为<br>$Gain(D,株高) = Ent(D) - \sum_{v=1}^{5} \frac{|D^v|}{|D|}Ent(D^v) = 1.539 - 0.618 = 0.921$<br>同理可得<br>$Gain(D, 组合) = 0.155$<br>$Gain(D, 试点) = 0.553$<br>$Gain(D, 穗长) = 0.277$<br>$Gain(D, 每穗总粒数) = 0.301$<br>$Gain(D, 每穗实粒数) = 0.116$  </p>
 <p>因此应选择信息增益最大的“株高”作为划分属性  </p>
 <hr>
 <h3 id="C4-5算法-增益率-Gain-ratio"><a href="#C4-5算法-增益率-Gain-ratio" class="headerlink" title="C4.5算法 增益率(Gain ratio)"></a>C4.5算法 增益率(Gain ratio)</h3><blockquote>
@@ -802,6 +802,70 @@
 <ul>
 <li>IV(a) 是属性 a 的固有值（intrinsic value）</li>
 </ul>
+<hr>
+<h4 id="样本示例-1"><a href="#样本示例-1" class="headerlink" title="样本示例"></a>样本示例</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">组合</th>
+<th style="text-align:center">试点</th>
+<th style="text-align:center">株高</th>
+<th style="text-align:center">穗长</th>
+<th style="text-align:center">每穗总粒数</th>
+<th style="text-align:center">每穗实粒数</th>
+<th style="text-align:center">成穗率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">紫两优10号</td>
+<td style="text-align:center">芜湖</td>
+<td style="text-align:center">较高</td>
+<td style="text-align:center">较低</td>
+<td style="text-align:center">高</td>
+<td style="text-align:center">较高</td>
+<td style="text-align:center">高</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">辐优886</td>
+<td style="text-align:center">凤阳</td>
+<td style="text-align:center">较低</td>
+<td style="text-align:center">较高</td>
+<td style="text-align:center">高</td>
+<td style="text-align:center">高</td>
+<td style="text-align:center">高</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">C两优111</td>
+<td style="text-align:center">凤阳</td>
+<td style="text-align:center">低</td>
+<td style="text-align:center">低</td>
+<td style="text-align:center">较低</td>
+<td style="text-align:center">较低</td>
+<td style="text-align:center">高</td>
+</tr>
+<tr>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>若示例数据添加属性“编号”，那么它的信息增益 $Gain(D, 编号) = Ent(D) = 1.539$<br>比任何其他属性的增益值都要大，该结点将按“编号”进行划分，决策树的性能会受到很大影响。因此，我们引入固有值（IV）来消除这种不良的影响。  </p>
+<p>如对于属性“编号”，$IV(编号) = - \sum_{v=1}^{20} \frac{1}{20} log_{2} \frac{1}{20} = 2.996$<br>$Gain \_ ratio(D, 编号) = \frac{Gain(D, 编号)}{IV(编号)} = \frac{1.539}{2.996} = 0.514$  </p>
+<p>同理计算出其他属性的增益率为<br>$Gain \_ ratio ( D, 组合 ) = 0.078$<br>$Gain \_ ratio ( D, 试点 ) = 0.238$<br>$Gain \_ ratio ( D, 株高 ) = 0.403$<br>$Gain \_ ratio ( D, 穗长 ) = 0.129$<br>$Gain \_ ratio ( D, 每穗总粒数 ) = 0.138$<br>$Gain \_ ratio ( D, 每穗实粒数 ) = 0.051$  </p>
+<p>此处由于数据量过小，且截取范围不太合适，导致仍然是按“编号”划分的表现最好…<br>在更大数据量的实际处理中，增益率能够很好地消除“编号”这种看似表现很好，实则与类别无关的属性的影响  </p>
+<hr>
 <h3 id="CART算法-基尼指数-Gini-index"><a href="#CART算法-基尼指数-Gini-index" class="headerlink" title="CART算法 基尼指数(Gini index)"></a>CART算法 基尼指数(Gini index)</h3><blockquote>
 <p>$Gini(D) = \sum_{k=1}^{|K|}\sum_{k’ \ne k} p_{k} p_{k’} \\ = 1-\sum_{k=1}^{|K|} p^{2}_{k}$</p>
 <p>$Gini \_ index(D,a) = \sum_{v=1}^{V} \frac{|D^v|}{|D|} Gini(D^v)$</p>
@@ -812,7 +876,11 @@
 <li><p>选择使得划分后基尼指数最小的属性作为最优划分属性，即<br>$a_{*} = arg_{a\in A} min $ $ Gini \_ index(D,a)$</p>
 </li>
 </ul>
-<p><strong><em>仍待更新完善…</em></strong></p>
+<hr>
+<h4 id="样本示例-2"><a href="#样本示例-2" class="headerlink" title="样本示例"></a>样本示例</h4><p>CART算法使用基尼值(Gini)而非信息熵来量化表示数据集D的纯度<br>我们仍然以“株高”作为示例<br>$Gini \_ index(D, 株高) = \sum_{v=1}^{5} \frac{|D^v|}{|D|} Gini(D^{v})<br>\\= \frac{3}{20}0.444 + \frac{5}{20}0.320 + \frac{5}{20}0 + \frac{4}{20}0.625 + \frac{3}{20}0 = 0.272$  </p>
+<p>同理可得<br>$Gini \_ index ( D, 组合 ) = 0.600$<br>$Gini \_ index ( D, 试点 ) = 0.450$<br>$Gini \_ index ( D, 穗长 ) = 0.537$<br>$Gini \_ index ( D, 每穗总粒数 ) = 0.543$<br>$Gini \_ index ( D, 每穗实粒数 ) = 0.600$  </p>
+<p>可见以株高作为划分属性的基尼指数最小  </p>
+<hr>
 
       
     </div>
@@ -982,7 +1050,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-text">摘要</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#决策树-Decision-Tree"><span class="nav-text">决策树 Decision Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#递归学习"><span class="nav-text">递归学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离散型样例数据"><span class="nav-text">离散型样例数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重要公式"><span class="nav-text">重要公式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#信息熵-Information-Entropy"><span class="nav-text">信息熵(Information Entropy)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ID3算法-信息增益-Information-Gain"><span class="nav-text">ID3算法 信息增益(Information Gain)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#样本示例"><span class="nav-text">样本示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C4-5算法-增益率-Gain-ratio"><span class="nav-text">C4.5算法 增益率(Gain ratio)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CART算法-基尼指数-Gini-index"><span class="nav-text">CART算法 基尼指数(Gini index)</span></a></li></ol></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-text">摘要</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#决策树-Decision-Tree"><span class="nav-text">决策树 Decision Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#递归学习"><span class="nav-text">递归学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离散型样例数据"><span class="nav-text">离散型样例数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重要公式"><span class="nav-text">重要公式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#信息熵-Information-Entropy"><span class="nav-text">信息熵(Information Entropy)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ID3算法-信息增益-Information-Gain"><span class="nav-text">ID3算法 信息增益(Information Gain)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#样本示例"><span class="nav-text">样本示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C4-5算法-增益率-Gain-ratio"><span class="nav-text">C4.5算法 增益率(Gain ratio)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#样本示例-1"><span class="nav-text">样本示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CART算法-基尼指数-Gini-index"><span class="nav-text">CART算法 基尼指数(Gini index)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#样本示例-2"><span class="nav-text">样本示例</span></a></li></ol></li></ol></li></ol></li></div>
             
 
           </div>
