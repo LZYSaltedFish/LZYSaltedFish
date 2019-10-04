@@ -79,21 +79,23 @@
 
 
 
-<meta name="description" content="摘要【解决方案】记使用 CMake 编译 freeglut，并使用 VS 2017 生成解决方案配置 freeglut3.2.1">
+<meta name="description" content="摘要【解决方案】手动配置：使用 CMake 编译 freeglut，并使用 VS 2017 生成解决方案配置 freeglut3.2.1自动配置：使用 VS 的 NuGet 组件进行配置">
 <meta name="keywords" content="解决方案">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows Visual Studio 2017 配置 freeglut3.2.1">
 <meta property="og:url" content="http://yoursite.com/2019/10/04/Windows-Visual-Studio-2017-配置-freeglut3.2.1/index.html">
 <meta property="og:site_name" content="LZY&#39;s Blog">
-<meta property="og:description" content="摘要【解决方案】记使用 CMake 编译 freeglut，并使用 VS 2017 生成解决方案配置 freeglut3.2.1">
+<meta property="og:description" content="摘要【解决方案】手动配置：使用 CMake 编译 freeglut，并使用 VS 2017 生成解决方案配置 freeglut3.2.1自动配置：使用 VS 的 NuGet 组件进行配置">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/10/04/Windows-Visual-Studio-2017-配置-freeglut3.2.1/Cmake_compile.png">
 <meta property="og:image" content="http://yoursite.com/2019/10/04/Windows-Visual-Studio-2017-配置-freeglut3.2.1/Configure_setting.png">
 <meta property="og:image" content="http://yoursite.com/2019/10/04/Windows-Visual-Studio-2017-配置-freeglut3.2.1/testing.png">
-<meta property="og:updated_time" content="2019-10-04T15:36:26.921Z">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/Windows-Visual-Studio-2017-配置-freeglut3.2.1/nupengl.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/Windows-Visual-Studio-2017-配置-freeglut3.2.1/nupengl_info.png">
+<meta property="og:updated_time" content="2019-10-04T16:20:26.380Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows Visual Studio 2017 配置 freeglut3.2.1">
-<meta name="twitter:description" content="摘要【解决方案】记使用 CMake 编译 freeglut，并使用 VS 2017 生成解决方案配置 freeglut3.2.1">
+<meta name="twitter:description" content="摘要【解决方案】手动配置：使用 CMake 编译 freeglut，并使用 VS 2017 生成解决方案配置 freeglut3.2.1自动配置：使用 VS 的 NuGet 组件进行配置">
 <meta name="twitter:image" content="http://yoursite.com/2019/10/04/Windows-Visual-Studio-2017-配置-freeglut3.2.1/Cmake_compile.png">
 
 
@@ -335,7 +337,7 @@
       
 
       
-        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>【解决方案】<br>记使用 CMake 编译 freeglut，并使用 VS 2017 生成解决方案配置 freeglut3.2.1</p>
+        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>【解决方案】<br>手动配置：<br>使用 CMake 编译 freeglut，并使用 VS 2017 生成解决方案配置 freeglut3.2.1<br>自动配置：<br>使用 VS 的 NuGet 组件进行配置  </p>
 <a id="more"></a>
 <h2 id="软件环境"><a href="#软件环境" class="headerlink" title="软件环境"></a>软件环境</h2><div class="table-container">
 <table>
@@ -361,7 +363,7 @@
 </tbody>
 </table>
 </div>
-<h2 id="一、CMake-编译"><a href="#一、CMake-编译" class="headerlink" title="一、CMake 编译"></a>一、CMake 编译</h2><p>下载 <a href="https://github.com/Kitware/CMake/releases/download/v3.15.4/cmake-3.15.4-win64-x64.msi" target="_blank" rel="noopener">CMake（msi安装版）</a> 和 <a href="https://sourceforge.net/projects/freeglut/files/latest/download" target="_blank" rel="noopener">freeglut</a> 文件  </p>
+<h1 id="手动方法"><a href="#手动方法" class="headerlink" title="手动方法"></a>手动方法</h1><h2 id="一、CMake-编译"><a href="#一、CMake-编译" class="headerlink" title="一、CMake 编译"></a>一、CMake 编译</h2><p>下载 <a href="https://github.com/Kitware/CMake/releases/download/v3.15.4/cmake-3.15.4-win64-x64.msi" target="_blank" rel="noopener">CMake（msi安装版）</a> 和 <a href="https://sourceforge.net/projects/freeglut/files/latest/download" target="_blank" rel="noopener">freeglut</a> 文件  </p>
 <ul>
 <li><p>得到的 freeglut 部分目录结构如下：<br>freeglut-3.2.1<br>├─android<br>│  └─gles2<br>├─doc<br>├─include<br>│  └─GL<br>├─progs<br>│  ├─demos<br>│  └─test-shapes-gles1<br>└─src  </p>
 </li>
@@ -378,12 +380,18 @@
 <li>将 <code>build\bin\Debug\freeglutd.dll</code> 和 <code>build\bin\Release\freeglut.dll</code> 拷贝至 <code>C:\Windows\System32</code> 目录下<br>（在 64 位 Windows 下：64 位 exe 和 dll 在目录 <code>C:\Windows\System32</code> 下，32 位 exe 和 dll 在目录 <code>C:\Windows\SysWOW64</code> 下）  </li>
 </ul>
 <h2 id="四、在-VS-中进行配置"><a href="#四、在-VS-中进行配置" class="headerlink" title="四、在 VS 中进行配置"></a>四、在 VS 中进行配置</h2><ul>
-<li>目录 -&gt; 属性 -&gt; VC++ 目录 -&gt; 包含目录 添加 <code>freeglut-3.2.1\include</code> 目录  </li>
-<li>库目录 添加 <code>build\lib\Debug</code> 及 <code>build\lib\Release</code> 目录  </li>
-<li>链接器 -&gt; 输入 -&gt; 附加依赖项 添加 <code>freeglut.lib</code> 及 <code>opengl32.lib</code>  </li>
+<li><code>目录 -&gt; 属性 -&gt; VC++ 目录 -&gt; 包含目录</code> 添加 <code>freeglut-3.2.1\include</code> 目录  </li>
+<li><code>库目录</code> 添加 <code>build\lib\Debug</code> 及 <code>build\lib\Release</code> 目录  </li>
+<li><code>链接器 -&gt; 输入 -&gt; 附加依赖项</code> 添加 <code>freeglut.lib</code> 及 <code>opengl32.lib</code>  </li>
 </ul>
 <h2 id="五、新建项目测试"><a href="#五、新建项目测试" class="headerlink" title="五、新建项目测试"></a>五、新建项目测试</h2><h3 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;gl/GLUT.H&gt;</span><br><span class="line">void Initial(void)//初始化函数 </span><br><span class="line">&#123;</span><br><span class="line">	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);//白色背景，前3个是RGB，最后是Alpha值，用来控制透明，1.0表示完全不透明</span><br><span class="line">	glMatrixMode(GL_PROJECTION);//OpenGL按照三维方式来处理图像，所以需要一个投影变换将三维图形投影到显示器的二维空间中</span><br><span class="line">	gluOrtho2D(0.0, 200, 0.0, 150.0);//指定使用正投影将一个x坐标在0~200，y坐标0~150范围内的矩形坐标区域投影到显示器窗口</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">void myDisplay(void)//显示回调函数</span><br><span class="line">&#123;</span><br><span class="line">	glClear(GL_COLOR_BUFFER_BIT);//使用glClearColorz中指定的值设定颜色缓存区的值，即将窗口中的每一个像素设置为背景色</span><br><span class="line">	glColor3f(0.0f, 0.0f, 0.0f);//绘图颜色为黑色</span><br><span class="line">	glRectf(50.0f, 100.0f, 150.0f, 50.0f);//图形的坐标，绘制一个左上角在（50，100），右下角在（150，50）的矩形</span><br><span class="line">	glFlush();//清空OpenGL命令缓冲区，强制执行命令缓冲区中所有OpenGL函数</span><br><span class="line">&#125;</span><br><span class="line">int main(int argc, char * argv[])//这是使用glut库函数进行窗口管理 </span><br><span class="line">&#123;</span><br><span class="line">	glutInit(&amp;argc, argv);//使用glut库需要进行初始化</span><br><span class="line">	glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE);//设定窗口显示模式，颜色模型和缓存，这里是RGB颜色模型和单缓存</span><br><span class="line">	glutInitWindowPosition(100, 100);//设定窗口的初始位置，屏幕左上角为原点，单位为像素</span><br><span class="line">	glutInitWindowSize(400, 400);//设定窗口的大小</span><br><span class="line">	glutCreateWindow(&quot;freeglut配置完成测试&quot;);//创建一个窗口，参数是窗口标题名</span><br><span class="line">	glutDisplayFunc(&amp;myDisplay);//将myDisplay指定为当前窗口的显示内容函数</span><br><span class="line">	Initial();</span><br><span class="line">	glutMainLoop();//使窗口框架运行起来，使显示回调函数开始工作</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h3><p>运行结果为白色背景下的黑色矩形<br><img src="/2019/10/04/Windows-Visual-Studio-2017-配置-freeglut3.2.1/testing.png"></p>
+<h1 id="自动方法"><a href="#自动方法" class="headerlink" title="自动方法"></a>自动方法</h1><p>使用以上手动方法只是为了学会并熟悉人工配置的过程，实际上功能强大的 <del>宇宙第一</del> IDE —— Visual Studio完全可以做到自动配置  </p>
+<ul>
+<li>在 VS 中安装 NuGet 组件  </li>
+<li>打开项目，在 <code>项目 -&gt; 管理NuGet程序包</code> 中搜索并下载 <code>nupengl.core</code>，配置工作就完成了  <img src="/2019/10/04/Windows-Visual-Studio-2017-配置-freeglut3.2.1/nupengl.png">
+可以看到该组件不仅配置好了 FreeGlut，甚至还配置好了 GLEW 和 GLFW<br><del>VS 真牛逼！</del>  <img src="/2019/10/04/Windows-Visual-Studio-2017-配置-freeglut3.2.1/nupengl_info.png"></li>
+</ul>
 
       
     </div>
@@ -556,7 +564,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件环境"><span class="nav-text">软件环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、CMake-编译"><span class="nav-text">一、CMake 编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、VS-生成解决方案"><span class="nav-text">二、VS 生成解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、搬运库文件"><span class="nav-text">三、搬运库文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、在-VS-中进行配置"><span class="nav-text">四、在 VS 中进行配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、新建项目测试"><span class="nav-text">五、新建项目测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#测试代码"><span class="nav-text">测试代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试结果"><span class="nav-text">测试结果</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件环境"><span class="nav-text">软件环境</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#手动方法"><span class="nav-text">手动方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、CMake-编译"><span class="nav-text">一、CMake 编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、VS-生成解决方案"><span class="nav-text">二、VS 生成解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、搬运库文件"><span class="nav-text">三、搬运库文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、在-VS-中进行配置"><span class="nav-text">四、在 VS 中进行配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、新建项目测试"><span class="nav-text">五、新建项目测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#测试代码"><span class="nav-text">测试代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试结果"><span class="nav-text">测试结果</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自动方法"><span class="nav-text">自动方法</span></a></li></div>
             
 
           </div>
